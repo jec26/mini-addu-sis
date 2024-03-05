@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Information System </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Student Information System</div>
+  </header>
+
+  <nav id="studentNav">
+    <ul>
+      <li><a href="grades.html">View Grades</a></li>
+      <li><a href="courses.html">Courses</a></li>
+    </ul>
+  </nav>
+
+  <nav id="teacherNav">
+    <ul>
+      <li><a href="grades.html">View Grades</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><button onclick="openModal('submitGradeModal')">Submit Grade (Teacher)</button></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Modal para pang submit ug grades (Teacher) -->
+    <div id="submitGradeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('submitGradeModal')">&times;</span>
+        <h2>Submit Grade</h2>
+        <form id="gradeForm">
+          <label for="gradeStudentCode">Student Code:</label>
+          <input type="text" id="gradeStudentCode" required>
+
+          <label for="gradePrelim">Prelim:</label>
+          <input type="number" id="gradePrelim" required>
+
+          <label for="gradeMidterm">Midterm:</label>
+          <input type="number" id="gradeMidterm" required>
+
+          <label for="gradePrefinal">Prefinal:</label>
+          <input type="number" id="gradePrefinal" required>
+
+          <label for="gradeFinal">Final:</label>
+          <input type="number" id="gradeFinal" required>
+
+          <button type="button" onclick="submitGrade()">Submit Grade</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Student Management System. All rights reserved.</p>
+  </footer>
+  <nav id="switchRoleNav">
+    <ul>
+        <li><a href="#" onclick="promptAndSetRole()">Switch Role</a></li>
+    </ul>
+</nav>
+  <script src="script.js"></script>
+</body>
+</html>
